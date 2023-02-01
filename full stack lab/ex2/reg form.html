@@ -1,0 +1,110 @@
+<html>
+
+    <head>
+        <title>Event Registration Form</title>
+        <script>
+            function welcome(){
+                    window.alert("succesfully registered")
+            }
+        </script>
+    </head>
+    <body bgcolor="lavender">
+        <h1 style="background: rgb(17, 118, 131);"><center>Event Registration Form</center></h1>
+        <form>
+            <table align="center">
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Name" name="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Degree:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Btech/BE">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        College:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Department:
+                    </td>
+                    <td>
+                        <select>
+                            <option>Select Option</option>
+                            <option>BTech-AI&DS</option>
+                            <option>BTech-IT</option>
+                            <option>BE-CSE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone Number:
+                    </td>
+                    <td>
+                        <input type="phone" placeholder="9867******">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email Id:
+                    </td>
+                    <td>
+                        <input type="email" placeholder="example1@*8">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address:
+                    </td>
+                    <td>
+                        <textarea rows="5" col="17" placeholder="Address"></textarea>
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    Date of Events:
+                </td>
+                <td>
+                    <input type="date">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Number of events intrested:
+                </td>
+                <td>
+                    <input type="range" min="0" max="5">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Events list:
+                </td>
+                <td>
+                    <input type="checkbox" class="radio" value="1" name="event">Paper presentation
+                    <input type="checkbox" class="radio" value="1" name="event">Hackathon
+                    <input type="checkbox" class="radio" value="1" name="event">HackUI
+                    <input type="checkbox" class="radio" value="1" name="event">Web Development
+                    <input type="checkbox" class="radio" value="1" name="event">symposium
+                </td>
+            </tr><br><br>
+            <tr>
+                <td colspan="2"><center><input type="submit" onclick="welcome()"></center></td>
+            </tr>
+            </table>
+        </form>
+        </body>
+</html>
