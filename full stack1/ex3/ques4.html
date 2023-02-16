@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 250px;
+      height: 250px;
+      margin: 50px auto;
+    }
+    td {
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: middle;
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+    }
+    h1{
+      text-align: center;
+    }
+  </style>
+</head>
+<body onload="startGame()">
+  <h1>4X4 Board Game</h1>
+  <table id="gameboard">
+    <tbody>
+      <tr>
+        <td id="c0"></td>
+        <td id="c1"></td>
+        <td id="c2"></td>
+        <td id="c3"></td>
+      </tr>
+      <tr>
+        <td id="c4"></td>
+        <td id="c5"></td>
+        <td id="c6"></td>
+        <td id="c7"></td>
+      </tr>
+      <tr>
+        <td id="c8"></td>
+        <td id="c9"></td>
+        <td id="c10"></td>
+        <td id="c11"></td>
+      </tr>
+      <tr>
+        <td id="c12"></td>
+        <td id="c13"></td>
+        <td id="c14"></td>
+        <td id="c15"></td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    function startGame() {
+      let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      for (let i = numbers.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+      }
+      numbers.push('');
+      for (let i = 0; i < 16; i++) {
+        let cell = document.getElementById(`c${i}`);
+        cell.textContent = numbers[i];
+        cell.onclick = function() {
+          let emptyCellRow = Math.floor(numbers.indexOf('') / 4);
+          let emptyCellCol = numbers.indexOf('') % 4;
+          let clickedCellRow = Math.floor(i / 4);
+          let clickedCellCol = i % 4;
+          if (Math.abs(emptyCellRow - clickedCellRow) <= 1 && Math.abs(emptyCellCol - clickedCellCol) <= 1) {
+            let temp = numbers[numbers.indexOf('')];
+            numbers[numbers.indexOf('')] = numbers[i];
+            numbers[i] = temp;
+            for (let j = 0; j < 16; j++) {
+              let cell = document.getElementById(`c${j}`);
+              cell.textContent = numbers[j];
+            }
+            if (numbers.join('') === '123456789101112131415') {
+              alert('You won!');
+            }
+          }
+        };
+      }
+    }
+  </script>
+</body>
+</html>
