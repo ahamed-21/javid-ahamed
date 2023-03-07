@@ -1,0 +1,33 @@
+<html>
+<body onload="showTable()">
+
+        <table id="table1">
+
+
+        </table>
+<script type="text/javascript">
+    function showTable()
+    {   var count=parseInt(prompt("Enter the Rows"))  ;
+        var cl = parseInt(prompt("Enter the COls"));
+        var tab=document.getElementById("table1");
+        tab.border="1";
+        var tabbody=document.createElement("tbody");
+        tab.appendChild(tabbody);
+        var cou=0;
+        for(var i=0;i<count;i++)
+        {
+            var tr=document.createElement("tr");
+            tabbody.appendChild(tr);
+            for(var j=0;j<cl;j++)
+            {   cou=cou+1;
+                var the=document.createElement("th");
+                the.textContent =cou; 
+                tr.appendChild(the);
+
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

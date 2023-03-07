@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques-3</title>
+</head>
+<body>
+    <h1>Checking whether POP UP is Blocked or not</h1>    
+    <!-- <button onclick="checkpopup()">Click Here To Check</button> -->
+<script>
+     function openpopup() {
+      var popup_window=window.open("F:\sem6\full stack lab\ex3\ques2.html","_blank"," width=400, height=400");   
+      if(popup_window=='undefined'||popup_window==null)
+      {
+        return false;
+      }
+      else{
+        return true;
+      }
+}
+
+    if(openpopup()){
+    console.log('popup is allowed');
+}
+else{
+    window.alert('POP UP BLocker enabled')
+    window.open("F:\sem6\full stack lab\ex3\ques3error.html","_self");
+    console.log('popup is blocked');
+}
+
+
+</script>
+</body>
+</html>
